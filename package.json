@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tape ./test/test.js | tap-spec"
+    "test": "NODE_ENV=dev tape ./test/test.js | tap-spec",
+    "dev": "NODE_ENV=dev nodemon ./src/index.js",
+    "start": "NODE_ENV=pro node ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,10 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "ajv": "^6.9.2",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "nodemon": "^1.18.10",
     "supertest": "^3.4.2",
     "tap-spec": "^5.0.0",
