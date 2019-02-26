@@ -1,4 +1,6 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+
 const app = express();
 const path = require('path');
 const bodyparser = require('body-parser');
@@ -13,6 +15,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
     extended: false,
 }));
+app.use(cookieParser());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', exphbs({
