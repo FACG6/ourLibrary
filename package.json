@@ -1,0 +1,39 @@
+{
+  "name": "ourlibrary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape ./test/test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG6/ourLibrary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG6/ourLibrary/issues"
+  },
+  "homepage": "https://github.com/FACG6/ourLibrary#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "jsonwebtoken": "^8.5.0",
+    "pg": "^7.8.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "supertest": "^3.4.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1"
+  }
+}
