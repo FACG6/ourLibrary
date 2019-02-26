@@ -33,6 +33,7 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "ajv": "^6.9.2",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
