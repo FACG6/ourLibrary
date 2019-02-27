@@ -8,7 +8,6 @@ if (process.env.NODE_ENV === 'dev') {
 } else if (process.env.NODE_ENV === 'pro') {
   DB_URL = process.env.DATABASE_URL;
 }
-
 const params = url.parse(DB_URL);
 const [username, password] = params.auth.split(':');
 
