@@ -7,6 +7,8 @@ if (process.env.NODE_ENV === 'dev') {
   DB_URL = process.env.DB_URL_local;
 } else if (process.env.NODE_ENV === 'pro') {
   DB_URL = process.env.DATABASE_URL;
+} else if (process.env.NODE_ENV === 'test') {
+  DB_URL = process.env.DB_URL_TEST;
 }
 const params = url.parse(DB_URL);
 const [username, password] = params.auth.split(':');
