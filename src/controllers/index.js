@@ -6,6 +6,9 @@ require('dotenv').config();
 
 const router = express.Router();
 const home = require('./home');
+//const getBooks = require('../database/queries/getBooks');
+
+router.get('/', home.get);
 const loginPage = require('./loginPage');
 const checkUser = require('./checkUser');
 const {
@@ -34,5 +37,4 @@ router.get('/sigup', (req, res) => {
 });
 router.use(client);
 router.use(server);
-
 module.exports = router;
