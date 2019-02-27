@@ -3,7 +3,6 @@ const url = require('url');
 require('dotenv').config();
 
 let DB_URL = process.env.DB_URL_local;
-console.log(DB_URL);
 if (process.env.NODE_ENV === 'dev') {
   DB_URL = process.env.DB_URL_local;
 }

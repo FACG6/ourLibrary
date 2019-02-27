@@ -22,7 +22,7 @@
 }
 
 .main {
-    height: 60vh;
+    min-height: 70vh;
     text-align: center;
 }
 
@@ -40,6 +40,7 @@
     padding: 15px;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
 .links a {
@@ -67,4 +68,33 @@
     border-radius: 7px;
     font-weight: bold;
     outline: none;
+}
+
+.book_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.book_img {
+    width: 220px;
+    height: 210px;
+    border: 1px solid #808080a6;
+    border-radius: 7px;
+    padding: 7px;
+}
+
+.book_item {
+    border: 1px solid #80808069;
+    padding: 10px;
+    border-radius: 7px;
+    height: 260px;
+    list-style: none;
+}
+
+.favarit {
+    color: green;
+    font-size: 19px;
+    margin-left: 10px;
+    cursor: pointer;
+
 }
