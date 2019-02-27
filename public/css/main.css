@@ -22,7 +22,79 @@
 }
 
 .main {
-    height: 60vh;
-    margin-top: 20px;
+    min-height: 70vh;
     text-align: center;
+}
+
+.login {
+    display: inline-grid;
+    border: 1px solid #8080807d;
+    border-radius: 7px;
+    width: 50%;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+.links {
+    background: #cbcbcb;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 7px;
+    border: 1px solid #808080a3;
+    outline: none;
+}
+
+.send {
+    width: 20%;
+    margin-left: 40%;
+    padding: 10px;
+    border: 1px solid green;
+    cursor: pointer;
+    background: #00800096;
+    border-radius: 7px;
+    font-weight: bold;
+    outline: none;
+}
+
+.book_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.book_img {
+    width: 220px;
+    height: 210px;
+    border: 1px solid #808080a6;
+    border-radius: 7px;
+    padding: 7px;
+}
+
+.book_item {
+    border: 1px solid #80808069;
+    padding: 10px;
+    border-radius: 7px;
+    height: 260px;
+    list-style: none;
+}
+
+.favarit {
+    color: green;
+    font-size: 19px;
+    margin-left: 10px;
+    cursor: pointer;
+
 }

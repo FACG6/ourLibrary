@@ -1,7 +1,5 @@
 const connect = require('../db_connection');
 
-const getBooks = (cb) => {
-  connect.query('SELECT * from books', cb);
-};
+const getBooks = () => connect.query('SELECT * from books');
 
 module.exports = getBooks;
