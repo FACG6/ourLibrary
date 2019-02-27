@@ -1,5 +1,5 @@
 const tape = require('tape');
-const supertest = require('supertest');
+// const supertest = require('supertest');
 const runBuild = require('./../src/database/db_built');
 const addUser = require('./../src/database/queries/addUser');
 const checkUser = require('./../src/database/queries/checkUser');
@@ -19,16 +19,17 @@ tape('test add user', (test) => {
       password: '123',
     };
     addUser(userINfo)
-      .then(result => {
+      .then((result) => {
+        console.log(result.rowCount);
         test.equal(result.rowCount, 1, 'added correctly');
         test.end();
-
       })
-      .catch(error => {
+      .catch((error) => {
+        console.log(error);
+        
         test.error(error);
         test.end();
-      })
-
+      });
   });
 });
 
@@ -37,14 +38,14 @@ tape('check user', (test) => {
     if (err) test.error(err);
     const email = 'abodsaid1996@gmail.com';
     checkUser(email)
-      .then(result => {
+      .then((result) => {
         test.equal(result.rows[0].email, email, 'email is correct');
         test.end();
       })
-      .catch(error => {
+      .catch((error) => {
         test.error(error);
         test.end();
-      })
+      });
   });
 });
 
@@ -52,12 +53,12 @@ tape('get books', (test) => {
   runBuild((err, res) => {
     if (err) test.error(err);
     getBooks()
-      .then(result => {
-        test.equal(result.rows[0].name, 'JAVASCRIPT', 'same book')
-        test.end()
+      .then((result) => {
+        test.equal(result.rows[0].name, 'JAVASCRIPT', 'same book');
+        test.end();
       })
-      .catch(error => {
-        test.error(error)
+      .catch((error) => {
+        test.error(error);
         test.end();
       });
   });
