@@ -36,7 +36,7 @@ https://libraryappher.herokuapp.com/
 
 ## Our Team
 * Ahmad Elalmi
-* Abdallah
-* Shorowq
-* Israa
+* Abdallah Ammar
+* Shorouq Saad
+* Israa Soliman
 
