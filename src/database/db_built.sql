@@ -21,6 +21,9 @@ CREATE TABLE user_books (
     PRIMARY KEY (user_id,book_id)
 );
 
+INSERT INTO users(name, email, password) VALUES 
+('abdallah', 'abodsaid1996@gmail.com', '$2b$10$ak4AzK.6lWJmf3/3IUeOFuzz1Q35FNTTkwEOay.AD1Q3kkbsO.Yuu');
+
 INSERT INTO books(url, name) VALUES
 ('https://images.gr-assets.com/books/1328834793l/2998152.jpg', 'JAVASCRIPT'),
 ('https://d2sofvawe08yqg.cloudfront.net/the-road-to-learn-react/hero?1549488773', 'The Road to Lean React'),('http://4.bp.blogspot.com/-BQ37KPo8S8I/VDclFoK7L1I/AAAAAAAAAuw/jMpFrAvXn6k/s1600/The-Art-of-R-Programming-Matloff-Norman.jpg', 'The Art of Programming'),
