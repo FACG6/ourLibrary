@@ -1,9 +1,10 @@
 const tape = require('tape');
-// const supertest = require('supertest');
+const supertest = require('supertest');
 const runBuild = require('./../src/database/db_built');
 const addUser = require('./../src/database/queries/addUser');
 const checkUser = require('./../src/database/queries/checkUser');
 const getBooks = require('./../src/database/queries/getBooks');
+const app = require('./../src/app');
 
 tape('first test', (test) => {
   test.equal(1, 1, 'paaas');
@@ -58,6 +59,18 @@ tape('get books', (test) => {
         test.end();
       });
   });
+});
+
+tape('testing endpoint', (test) => {
+  supertest(app)
+    .get('/')
+    .expect(200)
+    .expect('content-type', /html/)
+    .end((err, res) => {
+      if(err) test.error(err)
+      test.equal(res.text.includes('<title>Our Library</title>'), true, 'content is correct');
+      test.end();
+    });
 });
 
 tape.onFinish(() => {
