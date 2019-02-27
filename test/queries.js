@@ -64,6 +64,3 @@ tape('get books', (test) => {
   });
 });
 
-tape.onFinish(() => {
-  process.exit(0);
-});
