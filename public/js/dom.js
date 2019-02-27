@@ -23,6 +23,9 @@ send.addEventListener('click', (e) => {
   })
     .then(res => res.json())
     .then((res) => {
+      if (res.msg === 'done') {
+        window.location.href = '/home';
+      }
       msg.textContent = res.msg;
     });
 });
