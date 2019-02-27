@@ -5,15 +5,13 @@ const addUser = require('./../src/database/queries/addUser');
 const checkUser = require('./../src/database/queries/checkUser');
 const getBooks = require('./../src/database/queries/getBooks');
 
-// tape('first test', (test) => {
-//   test.equal(1, 1, 'paaas');
-//   test.end();
-// });
+tape('first test', (test) => {
+  test.equal(1, 1, 'paaas');
+  test.end();
+});
 
 tape('test add user', (test) => {
   runBuild('db_bulit.sql', (err, res) => {
-    console.log(111111111);
-    
     if (err) test.error(err);
     const userINfo = {
       name: 'abdallah',
@@ -22,47 +20,46 @@ tape('test add user', (test) => {
     };
     addUser(userINfo)
       .then((result) => {
-        console.log(222222222222);
         test.equal(result.rowCount, 1, 'added correctly');
         test.end();
       })
       .catch((error) => {
-        console.log(error);
-        
         test.error(error);
-        
       });
   });
 });
 
-// tape('check user', (test) => {
-//   runBuild((err, res) => {
-//     if (err) test.error(err);
-//     const email = 'abodsaid1996@gmail.com';
-//     checkUser(email)
-//       .then((result) => {
-//         test.equal(result.rows[0].email, email, 'email is correct');
-//         test.end();
-//       })
-//       .catch((error) => {
-//         test.error(error);
-//         test.end();
-//       });
-//   });
-// });
+tape('check user', (test) => {
+  runBuild('db_bulit.sql', (err, res) => {
+    if (err) test.error(err);
+    const email = 'abodsaid1996@gmail.com';
+    checkUser(email)
+      .then((result) => {
+        test.equal(result.rows[0].email, email, 'email is correct');
+        test.end();
+      })
+      .catch((error) => {
+        test.error(error);
+        test.end();
+      });
+  });
+});
 
-// tape('get books', (test) => {
-//   runBuild((err, res) => {
-//     if (err) test.error(err);
-//     getBooks()
-//       .then((result) => {
-//         test.equal(result.rows[0].name, 'JAVASCRIPT', 'same book');
-//         test.end();
-//       })
-//       .catch((error) => {
-//         test.error(error);
-//         test.end();
-//       });
-//   });
-// });
+tape('get books', (test) => {
+  runBuild('db_bulit.sql', (err, res) => {
+    if (err) test.error(err);
+    getBooks()
+      .then((result) => {
+        test.equal(result.rows[0].name, 'JAVASCRIPT', 'same book');
+        test.end();
+      })
+      .catch((error) => {
+        test.error(error);
+        test.end();
+      });
+  });
+});
 
+tape.onFinish(() => {
+  process.exit(0);
+});
