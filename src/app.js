@@ -8,12 +8,13 @@ const favicon = require('serve-favicon');
 const exphbs = require('express-handlebars');
 const controllers = require('./controllers/index');
 
+app.disable('x-powered-by');
 app.set('port', process.env.PORT || 3000);
 app.use(favicon(path.join(__dirname, '..', 'public', 'library.ico')));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
-    extended: false,
+  extended: false,
 }));
 app.use(cookieParser());
 app.set('views', path.join(__dirname, 'views'));

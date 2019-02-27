@@ -1,3 +1,7 @@
 exports.display = (req, res) => {
-  res.render('login');
+  if (req.token) {
+    res.redirect('/');
+  } else {
+    res.render('login', { dom: true });
+  }
 };
