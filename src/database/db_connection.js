@@ -6,7 +6,7 @@ let DB_URL = process.env.DB_URL_local;
 if (process.env.NODE_ENV === 'dev') {
   DB_URL = process.env.DB_URL_local;
 } else if (process.env.NODE_ENV === 'pro') {
-  DB_URL = process.env.DA_URL_heroku;
+  DB_URL = process.env.DATABASE_URL;
 }
 
 const params = url.parse(DB_URL);

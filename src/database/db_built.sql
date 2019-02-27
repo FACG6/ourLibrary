@@ -22,7 +22,7 @@ CREATE TABLE user_books (
 );
 
 INSERT INTO books(url, name) VALUES
-('JAVASCRIPT', 'https://images.gr-assets.com/books/1328834793l/2998152.jpg'),
-('The Road to Lean React', 'https://d2sofvawe08yqg.cloudfront.net/the-road-to-learn-react/hero?1549488773');
+('https://images.gr-assets.com/books/1328834793l/2998152.jpg', 'JAVASCRIPT'),
+('https://d2sofvawe08yqg.cloudfront.net/the-road-to-learn-react/hero?1549488773', 'The Road to Lean React');
 
 COMMIT;

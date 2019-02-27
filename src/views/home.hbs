@@ -1,4 +1,30 @@
-<div>
-    <a href="/login">login Page</a>
-    Weelcome
-</div>
+<section>
+    {{#if authorize}}
+    <div class="links">
+      <a href="/logout">logout</a> 
+      <a href="/favirat">favaite books</a>  
+    </div>
+    {{else}}
+    <div class="links">
+        <a href="/login">login</a>
+        <a href="/sigup">Sign up</a>
+    </div>
+    {{/if}}
+    <div class='book_container'>
+        {{#if authorize}}
+        {{#each books}}
+        <li class='book_item'>
+            <img class='book_img' alt={{this.name}} src={{this.url}}>
+            <p class='book_desc'>{{name}} <i class="far fa-thumbs-up favarit"></i></p>
+        </li>
+        {{/each}}
+        {{else}}
+        {{#each books}}
+        <li class='book_item'>
+            <img class='book_img' alt={{this.name}} src={{this.url}}>
+            <p class='book_desc'>{{name}}</p>
+        </li>
+        {{/each}}
+        {{/if}}
+    </div>
+</section>
