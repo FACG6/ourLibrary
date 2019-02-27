@@ -1,7 +1,10 @@
- <footer class="footer">
-            &copy; Cobyright
-    </footer>
-    {{#if dom}}
-    <script src="/js/dom.js"></script>
-    {{else}}
-    {{/if}}
+<footer class="footer">
+        &copy; Cobyright
+</footer>
+{{#if dom}}
+<script src="/js/dom.js"></script>
+{{else}}
+{{#if signup}}
+<script src="/js/domSignUp.js"></script>
+{{/if}}
+{{/if}}

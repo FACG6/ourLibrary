@@ -73,6 +73,9 @@
 .book_container {
     display: flex;
     justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .book_img {
@@ -89,6 +92,8 @@
     border-radius: 7px;
     height: 260px;
     list-style: none;
+    width: 290px;
+    margin-bottom: 15px;
 }
 
 .favarit {

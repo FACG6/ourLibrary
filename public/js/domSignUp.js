@@ -15,6 +15,8 @@ sendsign.addEventListener('click', (e) => {
 
   if (!nameVal || !emailVal || !passwordValue || !confirmpasswordsignval) {
     msgsign.textContent = 'plz fill all fields';
+  } else if (!(/^[a-zA-Z]([a-zA-Z]||[0-9])+@([a-zA-Z]||[0-9])+\.[a-zA-Z]{2,4}$/.test(emailVal))) {
+    msgsign.textContent = 'Please Enter Valid Email';
   } else if (passwordValue !== confirmpasswordsignval) {
     msgsign.textContent = 'passwords dont match';
   } else {
@@ -24,15 +26,15 @@ sendsign.addEventListener('click', (e) => {
       password: passwordValue,
     };
     fetch('/adduser', {
-        method: 'POST',
-        credentials: 'same-origin',
-        body: JSON.stringify(userInfo),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then((result) => result.json()).then((ress) => {
-        if (ress.status) window.location = '/login'
+      method: 'POST',
+      credentials: 'same-origin',
+      body: JSON.stringify(userInfo),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(result => result.json()).then((ress) => {
+        if (ress.status) window.location = '/login';
       });
-  };
+  }
 });
