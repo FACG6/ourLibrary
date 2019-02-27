@@ -1,0 +1,15 @@
+<section>
+    <div class="links">
+        <p>Hello {{name}}</p>
+      <a href="/logout">logout</a> 
+      <a href="/">back</a>  
+    </div>
+    <div class='book_container'>
+        {{#each result}}
+        <li class='book_item'>
+            <img class='book_img' alt={{this.name}} src={{this.url}}>
+            <p class='book_desc'>{{this.name}}</p>
+        </li>
+        {{/each}}
+    </div>
+</section>

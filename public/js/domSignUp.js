@@ -1,4 +1,3 @@
-
 const namesign = document.getElementById('namesign');
 const emailsign = document.getElementById('emailsign');
 const passwordsign = document.getElementById('passwordsign');
@@ -35,6 +34,9 @@ sendsign.addEventListener('click', (e) => {
     })
       .then(result => result.json()).then((ress) => {
         if (ress.status) window.location = '/login';
+        msgsign.textContent = 'Email Already exist';
+      }).catch((error) => {
+        msgsign.textContent = error;
       });
   }
 });

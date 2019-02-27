@@ -8,6 +8,7 @@ exports.get = (req, res, next) => {
         books: result.rows,
         authorize: true,
         name: req.token.name,
+        fav: true,
       });
     } else {
       res.render('home', {

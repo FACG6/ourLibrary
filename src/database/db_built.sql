@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users, books, user_books;
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    email TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 );
 
@@ -16,9 +16,9 @@ CREATE TABLE books (
 );
 
 CREATE TABLE user_books (
-    id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(user_id),
-    book_id INTEGER REFERENCES books(book_id)
+    book_id INTEGER REFERENCES books(book_id),
+    PRIMARY KEY (user_id,book_id)
 );
 
 INSERT INTO books(url, name) VALUES
