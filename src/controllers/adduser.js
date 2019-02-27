@@ -10,13 +10,15 @@ const hashPassWord = password => new Promise((resolve, reject) => {
 
 exports.add = (req, res) => {
   hashPassWord(req.body.password)
-    .then((hashedPass) => req.body.password = hashedPass)
+    .then((hashedPass) => {
+      req.body.password = hashedPass;
+      return req.body;
+    })
+    .then(addUser)
     .then(() => {
-      return addUser(req.body);
-    }).then(()=> {
-      res.send({status: true});
+      res.send({ status: true });
     })
     .catch((err) => {
-      console.log(err);
+      res.send({ err });
     });
 };

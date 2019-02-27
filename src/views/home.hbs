@@ -1,6 +1,7 @@
 <section>
     {{#if authorize}}
     <div class="links">
+        <p>Hello {{name}}</p>
       <a href="/logout">logout</a> 
       <a href="/favirat">favaite books</a>  
     </div>
@@ -15,7 +16,7 @@
         {{#each books}}
         <li class='book_item'>
             <img class='book_img' alt={{this.name}} src={{this.url}}>
-            <p class='book_desc'>{{name}} <i class="far fa-thumbs-up favarit"></i></p>
+            <p class='book_desc'>{{name}} <i class="far fa-thumbs-up favarit" id={{this.book_id}}></i></p>
         </li>
         {{/each}}
         {{else}}

@@ -6,8 +6,8 @@ const loginPage = require('./loginPage');
 const checkUser = require('./checkUser');
 const signUpPage = require('./signUpPage');
 const adduser = require('./adduser');
-
-
+const addFav = require('./addfav');
+const displyFav = require('./displayFav');
 const authontication = require('./authtication');
 const logout = require('./logout');
 const {
@@ -22,6 +22,8 @@ router.post('/check', checkUser.checkUser);
 router.get('/logout', logout.out);
 router.get('/signup', signUpPage.sign);
 router.post('/adduser', adduser.add);
+router.post('/addfav', addFav.add);
+router.get('/favirat', displyFav.displayFavBook);
 router.use(client);
 router.use(server);
 module.exports = router;
