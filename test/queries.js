@@ -11,7 +11,9 @@ const getBooks = require('./../src/database/queries/getBooks');
 // });
 
 tape('test add user', (test) => {
-  runBuild((err, res) => {
+  runBuild('db_bulit.sql', (err, res) => {
+    console.log(111111111);
+    
     if (err) test.error(err);
     const userINfo = {
       name: 'abdallah',
@@ -20,7 +22,7 @@ tape('test add user', (test) => {
     };
     addUser(userINfo)
       .then((result) => {
-        console.log(result.rowCount);
+        console.log(222222222222);
         test.equal(result.rowCount, 1, 'added correctly');
         test.end();
       })
