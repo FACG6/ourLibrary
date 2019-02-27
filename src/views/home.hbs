@@ -1,11 +1,25 @@
 <section>
-    <ul>
-    {{#each books}}
-    <li>
-        <img src={{url}}>
-        <p>{{name}}</p>
-    </li>
-    {{/each}}
+    <ul class='book_list'>
+        {{#if authorize}}
+        {{#each books}}
+        <li class='book_item'>
+            <img class='book_img' alt={{name}} src={{url}}>
+            <p class='book_desc'>{{name}}</p>
+            <i class="far fa-thumbs-up" style="color:black"></i>
+        </li>
+        {{/each}}
+        {{else}}
+        {{#each books}}
+        <li class='book_item'>
+            <img class='book_img' alt={{name}} src={{url}}>
+            <p class='book_desc'>{{name}}</p>
+        </li>
+        {{/each}}
+        {{/if}}
     </ul>
-
 </section>
+
+<div>
+    <a href="/login">login Page</a>
+    Weelcome
+</div>
