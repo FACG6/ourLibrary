@@ -53,5 +53,5 @@ exports.checkUser = (req, res) => {
     }
   }).catch((error) => {
     console.log(error.message);
-  })
+  });
 };
