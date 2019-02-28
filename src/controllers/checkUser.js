@@ -24,7 +24,6 @@ exports.checkUser = (req, res) => {
         const jwt = sign(payload, process.env.SECRET);
         res.cookie('jwt', jwt, {
           maxAge: 1000 * 60 * 60 * 2,
-        }, {
           httpOnly: true,
         });
         res.send(JSON.stringify({
@@ -39,6 +38,8 @@ exports.checkUser = (req, res) => {
       }
     })
     .catch((error) => {
-      res.send(JSON.stringify({ msg: error }));
+      res.send(JSON.stringify({
+        msg: error,
+      }));
     });
 };

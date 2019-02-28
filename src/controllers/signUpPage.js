@@ -1,3 +1,9 @@
 exports.sign = (req, res) => {
-  res.render('signup', { signup: true });
+  if (req.token) {
+    res.redirect('/');
+  } else {
+    res.render('signup', {
+      signup: true,
+    });
+  }
 };
