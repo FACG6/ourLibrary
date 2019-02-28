@@ -1,5 +1,5 @@
 # OurLibrary
-Our wibsite displays all books and allows users who registre to read books they're interested in.
+Our wibsite displays all books and allows users who registre to add favorite books they're interested in.
 
 ## link:
 https://libraryappher.herokuapp.com/
